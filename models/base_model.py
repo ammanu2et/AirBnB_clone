@@ -23,7 +23,7 @@ class BaseModel:
                 if k == "created_at" or k == "updated_at":
                     self.__dict__[k] = datetime.strptime(v, tform)
                 else:
-                    self.__dict__[k] = 
+                    self.__dict__[k] = v 
         else:
             models.storage.new(self)
 

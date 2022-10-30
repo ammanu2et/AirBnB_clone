@@ -19,9 +19,6 @@ class TestUser_instantiation(unittest.TestCase):
     
     def test_no_args_instantiates(self):
         self.assertEqual(User, type(User()))
-    
-    def test_new_instance_stored_in_objects(self):
-        self.assertIn(User(), models.storage.all().values())
 
     def test_created_at_is_public_datetime(self):
         self.assertEqual(datetime, type(User().created_at))

@@ -23,6 +23,12 @@ class TestUser_instantiation(unittest.TestCase):
     
     def test_new_instance_stored_in_objects(self):
         self.assertIn(User(), models.storage.all().values())
+
+    def test_created_at_is_public_datetime(self):
+        self.assertEqual(datetime, type(User().created_at))
+
+    def test_updated_at_is_public_datetime(self):
+        self.assertEqual(datetime, type(User().updated_at))
     
     def test_first_name_is_public_str(self):
         self.assertEqual(str, type(User.first_name))
